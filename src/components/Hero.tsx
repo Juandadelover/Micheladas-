@@ -2,7 +2,8 @@ import Image from "next/image";
 import { NeonGlasses } from "./icons/NeonGlasses";
 import { DeliveryIcon, PearlsIcon, CandyIcon, KidsIcon } from "./icons/Chips";
 import { siteInfo } from "@/data/menu";
-import heroBg from "../../public/images/hero-bg.png";
+import heroBgDesktop from "../../public/images/hero-bg.png";
+import heroBgMobile from "../../public/images/hero-bg-mobile.png";
 
 const chips = [
   { icon: DeliveryIcon, label: "Domicilio" },
@@ -11,26 +12,33 @@ const chips = [
   { icon: KidsIcon, label: "Versión para niños" },
 ];
 
-const heroMask =
+const heroMaskDesktop =
   "radial-gradient(ellipse 60% 52% at 50% 40%, transparent 0%, transparent 42%, black 100%)";
+const heroMaskMobile =
+  "radial-gradient(ellipse 42% 88% at 50% 48%, transparent 0%, transparent 34%, black 100%)";
+
+const photoClass = "object-cover object-center opacity-70 [filter:saturate(0.82)_contrast(1.03)]";
 
 export function Hero() {
   return (
     <section className="relative min-h-[600px] overflow-hidden pt-11 pb-10 text-center sm:min-h-[660px]">
       <div
-        className="absolute inset-0"
-        style={{
-          maskImage: heroMask,
-          WebkitMaskImage: heroMask,
-        }}
+        className="absolute inset-0 block sm:hidden"
+        style={{ maskImage: heroMaskMobile, WebkitMaskImage: heroMaskMobile }}
+      >
+        <Image src={heroBgMobile} alt="" fill priority sizes="100vw" className={photoClass} />
+      </div>
+      <div
+        className="absolute inset-0 hidden sm:block"
+        style={{ maskImage: heroMaskDesktop, WebkitMaskImage: heroMaskDesktop }}
       >
         <Image
-          src={heroBg}
+          src={heroBgDesktop}
           alt=""
           fill
-          priority
+          loading="lazy"
           sizes="100vw"
-          className="object-cover object-center opacity-70 [filter:saturate(0.82)_contrast(1.03)]"
+          className={photoClass}
         />
       </div>
       <div className="pointer-events-none absolute inset-0 bg-noche/35" />
