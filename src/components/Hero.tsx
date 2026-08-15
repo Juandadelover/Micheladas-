@@ -1,29 +1,45 @@
 import Image from "next/image";
 import { NeonGlasses } from "./icons/NeonGlasses";
+import { DeliveryIcon, PearlsIcon, CandyIcon, KidsIcon } from "./icons/Chips";
 import { siteInfo } from "@/data/menu";
 import heroBg from "../../public/images/hero-bg.png";
 
 const chips = [
-  "🛵 Domicilio",
-  "🥤 Perlas explosivas",
-  "🍬 Pincho de gomitas",
-  "🧒 Versión para niños",
+  { icon: DeliveryIcon, label: "Domicilio" },
+  { icon: PearlsIcon, label: "Perlas explosivas" },
+  { icon: CandyIcon, label: "Pincho de gomitas" },
+  { icon: KidsIcon, label: "Versión para niños" },
 ];
+
+const heroMask =
+  "radial-gradient(ellipse 60% 52% at 50% 40%, transparent 0%, transparent 42%, black 100%)";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[620px] overflow-hidden pt-11 pb-10 text-center sm:min-h-[680px]">
-      <Image
-        src={heroBg}
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center"
-      />
+    <section className="relative min-h-[600px] overflow-hidden pt-11 pb-10 text-center sm:min-h-[660px]">
+      <div
+        className="absolute inset-0"
+        style={{
+          maskImage: heroMask,
+          WebkitMaskImage: heroMask,
+        }}
+      >
+        <Image
+          src={heroBg}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-70 [filter:saturate(0.82)_contrast(1.03)]"
+        />
+      </div>
+      <div className="pointer-events-none absolute inset-0 bg-noche/35" />
       <div
         className="pointer-events-none absolute inset-0"
-        style={{ background: "linear-gradient(180deg, rgba(4,20,26,.55) 0%, rgba(4,20,26,.35) 40%, rgba(4,20,26,.75) 78%, var(--color-noche) 100%)" }}
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(4,20,26,.2) 0%, rgba(4,20,26,.15) 32%, rgba(4,20,26,.55) 72%, var(--color-noche) 100%)",
+        }}
       />
 
       <div className="relative z-10 mx-auto max-w-[760px] px-[18px]">
@@ -44,12 +60,13 @@ export function Hero() {
         </p>
 
         <div className="mt-[22px] flex flex-wrap justify-center gap-2">
-          {chips.map((chip) => (
+          {chips.map(({ icon: Icon, label }) => (
             <span
-              key={chip}
-              className="rounded-full border border-agua/25 bg-noche/50 px-3.5 py-1.5 text-[12.5px] text-crema backdrop-blur-sm"
+              key={label}
+              className="flex items-center gap-1.5 rounded-full border border-agua/25 bg-noche/50 px-3.5 py-1.5 text-[12.5px] text-crema backdrop-blur-sm"
             >
-              {chip}
+              <Icon className="h-3.5 w-3.5 shrink-0 text-agua" />
+              {label}
             </span>
           ))}
         </div>

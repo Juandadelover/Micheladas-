@@ -19,7 +19,7 @@ export function buildWhatsAppMessage(lines: CartLine[], details: CheckoutDetails
   const hayAlcohol = lines.some((l) => l.alcohol);
 
   const partes = [
-    `¡Hola ${siteInfo.owner.split(" ")[0]}! Quiero pedir en *${siteInfo.name}* 🍹`,
+    `¡Hola ${siteInfo.owner.split(" ")[0]}! Quiero pedir en *${siteInfo.name}*`,
     "",
     ...rows,
     "",

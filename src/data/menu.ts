@@ -4,7 +4,6 @@ export interface Flavor {
   id: FlavorId;
   label: string;
   colorVar: string;
-  emoji: string;
   sencilla: string;
   especial: string;
 }
@@ -14,7 +13,6 @@ export const flavors: Flavor[] = [
     id: "rojos",
     label: "Frutos Rojos",
     colorVar: "var(--color-rojos)",
-    emoji: "❤️",
     sencilla: "Fresa, manzana verde, cereza y gomitas.",
     especial: "Fresa, manzana, cereza, uva, perlas explosivas y pincho de gomitas.",
   },
@@ -22,7 +20,6 @@ export const flavors: Flavor[] = [
     id: "amarillos",
     label: "Frutos Amarillos",
     colorVar: "var(--color-amarillos)",
-    emoji: "💛",
     sencilla: "Piña, maracuyá, mango y gomitas.",
     especial: "Piña, mango, maracuyá, perlas explosivas y gomitas extra.",
   },
@@ -30,7 +27,6 @@ export const flavors: Flavor[] = [
     id: "verdes",
     label: "Frutos Verdes",
     colorVar: "var(--color-verdes)",
-    emoji: "💚",
     sencilla: "Manzana verde, cereza, mango y gomitas.",
     especial: "Manzana, cereza, mango, perlas explosivas y pincho de gomitas.",
   },
@@ -38,7 +34,6 @@ export const flavors: Flavor[] = [
     id: "tamarindo",
     label: "Tamarindo",
     colorVar: "var(--color-tamarindo)",
-    emoji: "🤎",
     sencilla: "3 bolitas de tamarindo, 3 bolones y 2 bom bom bum.",
     especial: "4 bolitas de tamarindo, perlas explosivas, 3 bom bom bum y 5 bolones.",
   },
@@ -46,7 +41,6 @@ export const flavors: Flavor[] = [
     id: "chicle",
     label: "Chicle Azul",
     colorVar: "var(--color-chicle)",
-    emoji: "💙",
     sencilla: "Chicle azul, toque cítrico y gomitas de colores.",
     especial: "Chicle azul cargado, perlas explosivas y pincho de gomitas surtido.",
   },

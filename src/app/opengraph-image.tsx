@@ -77,14 +77,36 @@ export default function OgImage() {
           <div
             style={{
               display: "flex",
+              alignItems: "center",
               marginTop: 34,
-              fontSize: 26,
+              fontSize: 24,
               color: "#eafdff",
               opacity: 0.85,
               fontFamily: "Arial, sans-serif",
+              gap: 10,
             }}
           >
-            🍓 Rojos · 🍏 Verdes · 🍍 Amarillos · 🟤 Tamarindo · 🔵 Chicle
+            {[
+              { label: "Rojos", color: "#ff3b5c" },
+              { label: "Verdes", color: "#57e389" },
+              { label: "Amarillos", color: "#ffb020" },
+              { label: "Tamarindo", color: "#f0812f" },
+              { label: "Chicle", color: "#6c8cff" },
+            ].map((f, i) => (
+              <div key={f.label} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                {i > 0 && <span style={{ opacity: 0.4 }}>·</span>}
+                <span
+                  style={{
+                    display: "flex",
+                    width: 14,
+                    height: 14,
+                    borderRadius: "50%",
+                    background: f.color,
+                  }}
+                />
+                <span style={{ display: "flex" }}>{f.label}</span>
+              </div>
+            ))}
           </div>
 
           <div
@@ -100,7 +122,7 @@ export default function OgImage() {
               fontWeight: 700,
             }}
           >
-            Pide por WhatsApp con domicilio 🛵
+            Pide por WhatsApp con domicilio
           </div>
         </div>
       </div>
