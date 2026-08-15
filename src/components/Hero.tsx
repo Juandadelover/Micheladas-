@@ -1,6 +1,7 @@
+import Image from "next/image";
 import { NeonGlasses } from "./icons/NeonGlasses";
-import { Flamingo } from "./icons/Flamingo";
 import { siteInfo } from "@/data/menu";
+import heroBg from "../../public/images/hero-bg.png";
 
 const chips = [
   "🛵 Domicilio",
@@ -11,22 +12,24 @@ const chips = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-11 pb-8 text-center">
-      <div
-        className="pointer-events-none absolute -inset-x-[30%] -top-[30%] h-[420px]"
-        style={{ background: "radial-gradient(circle at 30% 30%, rgba(255,46,154,.22), transparent 62%)" }}
+    <section className="relative min-h-[620px] overflow-hidden pt-11 pb-10 text-center sm:min-h-[680px]">
+      <Image
+        src={heroBg}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
       />
       <div
-        className="pointer-events-none absolute -inset-x-[30%] -top-[20%] left-[40%] h-[420px]"
-        style={{ background: "radial-gradient(circle at 60% 20%, rgba(58,221,230,.2), transparent 60%)" }}
+        className="pointer-events-none absolute inset-0"
+        style={{ background: "linear-gradient(180deg, rgba(4,20,26,.55) 0%, rgba(4,20,26,.35) 40%, rgba(4,20,26,.75) 78%, var(--color-noche) 100%)" }}
       />
-      <Flamingo className="pointer-events-none absolute -left-2 bottom-2 w-14 opacity-70 animar-flotar hidden sm:block" />
-      <Flamingo className="pointer-events-none absolute -right-2 bottom-8 w-14 opacity-70 animar-flotar hidden sm:block [animation-delay:1.4s] scale-x-[-1]" />
 
       <div className="relative z-10 mx-auto max-w-[760px] px-[18px]">
         <NeonGlasses className="mx-auto mb-5 h-[92px] w-auto animar-flotar" />
 
-        <p className="mb-4 text-[11.5px] font-medium uppercase tracking-[0.22em] text-crema/60">
+        <p className="mb-4 text-[11.5px] font-medium uppercase tracking-[0.22em] text-crema/70">
           {siteInfo.neighborhood} · {siteInfo.address}
         </p>
 
@@ -35,7 +38,7 @@ export function Hero() {
           <span className="block text-white animar-neon neon-text-agua [animation-delay:.4s]">Rose</span>
         </h1>
 
-        <p className="mx-auto mt-5 max-w-[23ch] text-[16.5px] text-crema/70">
+        <p className="mx-auto mt-5 max-w-[23ch] text-[16.5px] text-crema/80">
           Frutos rojos, verdes, amarillos, tamarindo y chicle.{" "}
           <b className="font-semibold text-sol">No te quedes sin probar la tuya.</b>
         </p>
@@ -44,7 +47,7 @@ export function Hero() {
           {chips.map((chip) => (
             <span
               key={chip}
-              className="rounded-full border border-agua/25 bg-agua/10 px-3.5 py-1.5 text-[12.5px] text-crema"
+              className="rounded-full border border-agua/25 bg-noche/50 px-3.5 py-1.5 text-[12.5px] text-crema backdrop-blur-sm"
             >
               {chip}
             </span>
@@ -62,7 +65,7 @@ export function Hero() {
             href={siteInfo.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-crema/25 px-6 py-3.5 text-[15.5px] font-medium text-crema transition-colors hover:bg-white/5"
+            className="rounded-full border border-crema/35 bg-noche/40 px-6 py-3.5 text-[15.5px] font-medium text-crema backdrop-blur-sm transition-colors hover:bg-white/10"
           >
             Ver Instagram
           </a>
