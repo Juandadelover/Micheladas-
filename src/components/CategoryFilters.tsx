@@ -33,9 +33,9 @@ export function CategoryFilters({
               type="button"
               aria-pressed={pressed}
               onClick={() => onChange(opt.value)}
-              className={`shrink-0 rounded-full border px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-colors ${
+              className={`shrink-0 rounded-full border px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-all duration-200 active:scale-95 ${
                 pressed
-                  ? "border-agua bg-agua text-noche font-semibold"
+                  ? "scale-[1.04] border-agua bg-agua text-noche font-semibold"
                   : "border-crema/15 text-crema/65 hover:border-crema/30"
               }`}
             >

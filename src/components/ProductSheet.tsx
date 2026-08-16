@@ -111,16 +111,21 @@ function ProductForm({
           type="button"
           aria-label="Quitar una"
           onClick={() => setQty((q) => Math.max(1, q - 1))}
-          className="flex h-11 w-11 items-center justify-center rounded-full border-[1.5px] border-crema/20"
+          className="flex h-11 w-11 items-center justify-center rounded-full border-[1.5px] border-crema/20 transition-transform active:scale-90"
         >
           <MinusGlyph />
         </button>
-        <span className="font-display min-w-[34px] text-center text-2xl font-extrabold">{qty}</span>
+        <span
+          key={qty}
+          className="font-display animar-pop min-w-[34px] text-center text-2xl font-extrabold"
+        >
+          {qty}
+        </span>
         <button
           type="button"
           aria-label="Agregar una"
           onClick={() => setQty((q) => Math.min(20, q + 1))}
-          className="flex h-11 w-11 items-center justify-center rounded-full border-[1.5px] border-crema/20"
+          className="flex h-11 w-11 items-center justify-center rounded-full border-[1.5px] border-crema/20 transition-transform active:scale-90"
         >
           <PlusGlyph />
         </button>
@@ -129,7 +134,7 @@ function ProductForm({
       <button
         type="button"
         onClick={handleAdd}
-        className="w-full rounded-full bg-gradient-to-br from-rosa to-rosa-2 py-3.5 text-[15.5px] font-semibold text-white shadow-[0_8px_26px_rgba(255,46,154,.34)]"
+        className="w-full rounded-full bg-gradient-to-br from-rosa to-rosa-2 py-3.5 text-[15.5px] font-semibold text-white shadow-[0_8px_26px_rgba(255,46,154,.34)] transition-transform active:scale-[0.98]"
       >
         Agregar al pedido · {formatCOP(unitPrice * qty)}
       </button>

@@ -51,23 +51,37 @@ export function Hero() {
       />
 
       <div className="relative z-10 mx-auto max-w-[760px] px-[18px]">
-        <NeonGlasses className="mx-auto mb-5 h-[92px] w-auto animar-flotar" />
+        <div className="animar-entrar mb-5">
+          <NeonGlasses className="mx-auto h-[92px] w-auto animar-flotar" />
+        </div>
 
-        <p className="mb-4 text-[11.5px] font-medium uppercase tracking-[0.22em] text-crema/70">
+        <p
+          className="animar-entrar mb-4 text-[11.5px] font-medium uppercase tracking-[0.22em] text-crema/70"
+          style={{ animationDelay: "90ms" }}
+        >
           {siteInfo.neighborhood} · {siteInfo.address}
         </p>
 
-        <h1 className="font-script leading-[0.98] text-[clamp(46px,15vw,84px)]">
+        <h1
+          className="animar-entrar font-script leading-[0.98] text-[clamp(46px,15vw,84px)]"
+          style={{ animationDelay: "170ms" }}
+        >
           <span className="block text-white animar-neon neon-text-rosa">Micheladas</span>
           <span className="block text-white animar-neon neon-text-agua [animation-delay:.4s]">Rose</span>
         </h1>
 
-        <p className="mx-auto mt-5 max-w-[23ch] text-[16.5px] text-crema/80">
+        <p
+          className="animar-entrar mx-auto mt-5 max-w-[23ch] text-[16.5px] text-crema/80"
+          style={{ animationDelay: "270ms" }}
+        >
           Frutos rojos, verdes, amarillos, tamarindo y chicle.{" "}
           <b className="font-semibold text-sol">No te quedes sin probar la tuya.</b>
         </p>
 
-        <div className="mt-[22px] flex flex-wrap justify-center gap-2">
+        <div
+          className="animar-entrar mt-[22px] flex flex-wrap justify-center gap-2"
+          style={{ animationDelay: "350ms" }}
+        >
           {chips.map(({ icon: Icon, label }) => (
             <span
               key={label}
@@ -79,7 +93,10 @@ export function Hero() {
           ))}
         </div>
 
-        <div className="mt-[26px] flex flex-wrap justify-center gap-2.5">
+        <div
+          className="animar-entrar mt-[26px] flex flex-wrap justify-center gap-2.5"
+          style={{ animationDelay: "430ms" }}
+        >
           <a
             href="#carta"
             className="rounded-full bg-gradient-to-br from-rosa to-rosa-2 px-[26px] py-3.5 text-[15.5px] font-semibold text-white shadow-[0_8px_26px_rgba(255,46,154,.34)] transition-transform active:scale-95"
